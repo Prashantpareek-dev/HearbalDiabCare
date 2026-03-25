@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <title>DiabCare – બ્લડ શૂગર મેનેજમેન્ટ</title>
+  <link rel="icon" href="data:,">
   <link href="https://fonts.googleapis.com/css2?family=Halant:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <style>
@@ -33,12 +34,13 @@
       --ow: #f4faf5;
       --gray: #e0f0e4;
       --font: 'Halant', serif;
-      --pad-x: clamp(16px, 5vw, 40px);
-      --content-max: 1180px;
+      --pad-x: clamp(20px, 6vw, 56px);
+      --content-max: 1280px;
     }
 
     html {
-      scroll-behavior: smooth
+      scroll-behavior: smooth;
+      font-size: 112%
     }
 
     body {
@@ -1315,7 +1317,11 @@
     /* OFFER */
     .offer-sec {
       background: var(--green);
-      overflow: hidden
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     .offer-top {
@@ -1381,7 +1387,7 @@
 
     .offer-row-img {
       width: 100%;
-      height: clamp(90px, 22vw, 130px);
+      height: clamp(366px, 85vw, 130px);
       object-fit: cover;
       display: block
     }
@@ -1414,6 +1420,14 @@
       color: rgba(255, 255, 255, .75)
     }
 
+     @media(min-width:450px) {
+       .offer-row-img {
+        width: 100%;
+        height: clamp(20px, 24vw, 180px);
+        object-fit: cover
+      }
+     }
+
     @media(min-width:768px) {
       .offer-sec > div:not(.offer-top):not(.offer-cta) {
         display: grid;
@@ -1441,7 +1455,7 @@
 
       .offer-row-img {
         width: 100%;
-        height: clamp(366px, 14vw, 180px);
+        height: clamp(533px, 30vw, 180px);
         object-fit: cover
       }
 
@@ -1652,6 +1666,37 @@
     .swiper-slide-active.reel-slide.is-playing .reel-play {
       opacity: 0;
       pointer-events: none
+    }
+
+    .reel-mute {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 10;
+      background: rgba(0,0,0,.52);
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 16px;
+      color: #fff;
+      backdrop-filter: blur(6px);
+      transition: background .2s;
+      opacity: 0;
+      pointer-events: none
+    }
+
+    .swiper-slide-active .reel-mute {
+      opacity: 1;
+      pointer-events: auto
+    }
+
+    .reel-mute:hover {
+      background: rgba(0,0,0,.78)
     }
 
     .reels-nav {
@@ -1949,7 +1994,17 @@
     /* ====== ORDER FORM ====== */
     .order-sec {
       background: var(--deep);
-      padding: clamp(44px, 8vw, 64px) var(--pad-x) clamp(40px, 8vw, 56px)
+      /* max-width: var(--content-max); */
+      padding: clamp(44px, 8vw, 64px) var(--pad-x) clamp(40px, 8vw, 56px);
+      display: flex;
+      flex-direction: column;
+      align-items: center
+    }
+
+    .order-sec .order-pills,
+    .order-sec .once-notice {
+      width: 100%;
+      max-width: 450px
     }
 
     .order-sec .sec-title {
@@ -2006,7 +2061,11 @@
       border-radius: 22px;
       padding: clamp(20px, 5.5vw, 34px) clamp(16px, 5vw, 30px);
       position: relative;
-      overflow: hidden
+      overflow: hidden;
+      max-width: 450px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto
     }
 
     .order-card::before {
@@ -2539,7 +2598,7 @@
   <section class="hook">    
    <div class="resp-banner">
     <img src="./Image/Hook2.png" alt="" class="banner-desktop">
-    <img src="./Image/Hook2.png" alt="" class="banner-mobile">
+    <img src="./Image/Hook1.png" alt="" class="banner-mobile">
    </div>
     <div class="hook-cta-bar">
       <div class="info"><strong>10% OFF + FREE DELIVERY</strong><span>Limited Time Offer</span></div>
@@ -2604,52 +2663,52 @@
       <div class="swiper reels-swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide reel-slide">
-            <div class="reel-inner"><video src="./Image/Video1.mp4" 
-              autoPlay playsinline></video></div>
+            <div class="reel-inner"><video src="./Image/Video1.mp4" playsinline></video></div>
             <div class="reel-overlay"></div>
             <div class="reel-play">▶</div>
+            <button class="reel-mute" title="Toggle Mute">🔊</button>
             <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@diabcare_official</span></div>
           </div>
           <div class="swiper-slide reel-slide">
-            <div class="reel-inner"><video src="./Image/Video2.mp4" 
-              autoPlay playsinline></video></div>
+            <div class="reel-inner"><video src="./Image/Video2.mp4" playsinline></video></div>
             <div class="reel-overlay"></div>
             <div class="reel-play">▶</div>
+            <button class="reel-mute" title="Toggle Mute">🔊</button>
             <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@health_gujarat</span></div>
           </div>
           <div class="swiper-slide reel-slide">
-            <div class="reel-inner"><video src="./Image/Video3.MOV" 
-              autoPlay playsinline></video></div>
+            <div class="reel-inner"><video src="./Image/Video3.MOV" playsinline></video></div>
             <div class="reel-overlay"></div>
             <div class="reel-play">▶</div>
+            <button class="reel-mute" title="Toggle Mute">🔊</button>
             <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@ayurveda_tips</span></div>
           </div>
           <div class="swiper-slide reel-slide">
-            <div class="reel-inner"><video src="./Image/Video4.mp4"
-              autoPlay playsinline></video></div>
+            <div class="reel-inner"><video src="./Image/Video4.mp4" playsinline></video></div>
             <div class="reel-overlay"></div>
             <div class="reel-play">▶</div>
+            <button class="reel-mute" title="Toggle Mute">🔊</button>
             <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@sugar_free_life</span></div>
           </div>
           <div class="swiper-slide reel-slide">
-            <div class="reel-inner"><video src="./Image/Video5.mp4"
-              autoPlay playsinline></video></div>
+            <div class="reel-inner"><video src="./Image/Video5.mp4" playsinline></video></div>
             <div class="reel-overlay"></div>
             <div class="reel-play">▶</div>
+            <button class="reel-mute" title="Toggle Mute">🔊</button>
             <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@natural_health_in</span></div>
           </div>
           <div class="swiper-slide reel-slide">
-            <div class="reel-inner"><video src="./Image/Video6.mp4"
-              autoPlay playsinline></video></div>
+            <div class="reel-inner"><video src="./Image/Video6.mp4" playsinline></video></div>
             <div class="reel-overlay"></div>
             <div class="reel-play">▶</div>
+            <button class="reel-mute" title="Toggle Mute">🔊</button>
             <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@diabcare_results</span></div>
           </div>
           <div class="swiper-slide reel-slide">
-            <div class="reel-inner"><video src="./Image/Vedio7.mp4"
-              autoPlay playsinline></video></div>
+            <div class="reel-inner"><video src="./Image/Vedio7.mp4" playsinline></video></div>
             <div class="reel-overlay"></div>
             <div class="reel-play">▶</div>
+            <button class="reel-mute" title="Toggle Mute">🔊</button>
             <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@wellness_wala</span></div>
           </div>
         </div>
@@ -2913,11 +2972,11 @@
       <p class="offer-sub">Special discount + Free gifts સાથે</p>
     </div>
     <div>
-      <div class="offer-row"><img src="./Image/offer1.avif" alt=""
+      <div class="offer-row"><img src="./Image/offer1.png" alt=""
           class="offer-row-img">
         <div class="offer-row-text"><strong>🚚 FREE Delivery</strong><span>ઘરે ઘરે ફ્રી ડિલિવરી</span></div>
       </div>
-      <div class="offer-row"><img src="./Image/offer2.avif" alt=""
+      <div class="offer-row"><img src="./Image/offer2.png" alt=""
           class="offer-row-img">
         <div class="offer-row-text"><strong>🥗 FREE Diet Chart</strong><span>Expert-designed diet plan</span></div>
       </div>
@@ -3007,18 +3066,18 @@
     <div class="order-card">
       <div class="fgroup">
         <label class="flabel">👤 નામ</label>
-        <span class="ficon">👤</span>
+        
         <input class="finput" type="text" id="fname" placeholder="તમારું પૂરું નામ" required>
       </div>
       <div class="fgroup">
         <label class="flabel">📱 ફોન નંબર</label>
-        <span class="ficon">📱</span>
+        
         <input class="finput" type="tel" id="fphone" placeholder="10 digit mobile number" maxlength="10"
           pattern="[0-9]{10}" required>
       </div>
       <div class="fgroup">
         <label class="flabel">🏠 સરનામું</label>
-        <span class="ficon" style="top:clamp(13px,3.5vw,17px);transform:none">🏠</span>
+        
         <textarea class="finput" id="faddr" placeholder="ઘર નં, ગ, જિલ્લો, રાજ્ય, Pincode" required></textarea>
       </div>
       <span class="qty-label-t">📦 Quantity પસંદ કરો</span>
@@ -3151,6 +3210,7 @@
     const rSwiper = new Swiper('.reels-swiper', {
       centeredSlides: true,
       slidesPerView: 'auto',
+      loopedSlides: 3,
       spaceBetween: 14,
       loop: true,
       speed: 600,
@@ -3165,6 +3225,13 @@
     });
 
     // VIDEO — pause all when slide changes
+    function updateMuteBtn(slide) {
+      const vid = slide.querySelector('video');
+      const btn = slide.querySelector('.reel-mute');
+      if (!vid || !btn) return;
+      btn.textContent = vid.muted ? '🔇' : '🔊';
+    }
+
     function pauseAllReels() {
       document.querySelectorAll('.reels-swiper .swiper-slide').forEach(s => {
         const v = s.querySelector('video');
@@ -3179,8 +3246,13 @@
       const vid = activeSlide.querySelector('video');
       if (!vid) return;
       activeSlide.classList.add('is-playing');
-      vid.muted = true;
-      vid.play().catch(() => {});
+      // Try unmuted first; fall back to muted if browser blocks it
+      vid.muted = false;
+      vid.play().catch(() => {
+        vid.muted = true;
+        vid.play().catch(() => {});
+      }).finally ? vid.play().catch(() => {}).then ? null : null : null;
+      updateMuteBtn(activeSlide);
     }
 
     rSwiper.on('slideChange', () => { pauseAllReels(); setTimeout(playActiveReel, 100); });
@@ -3191,8 +3263,19 @@
       v.addEventListener('ended', () => rSwiper.slideNext());
     });
 
-    // Tap active slide to toggle mute / pause
+    // Mute button click
     document.querySelector('.reels-swiper').addEventListener('click', e => {
+      const muteBtn = e.target.closest('.reel-mute');
+      if (muteBtn) {
+        e.stopPropagation();
+        const slide = muteBtn.closest('.reel-slide');
+        const vid = slide ? slide.querySelector('video') : null;
+        if (!vid) return;
+        vid.muted = !vid.muted;
+        updateMuteBtn(slide);
+        return;
+      }
+      // Tap slide area to play/pause
       const slide = e.target.closest('.reel-slide');
       if (!slide || !slide.classList.contains('swiper-slide-active')) return;
       const vid = slide.querySelector('video');
@@ -3200,11 +3283,12 @@
       if (vid.paused) {
         pauseAllReels();
         slide.classList.add('is-playing');
-        vid.muted = true;
-        vid.play().catch(() => {});
+        vid.muted = false;
+        vid.play().catch(() => { vid.muted = true; vid.play().catch(() => {}); });
+        updateMuteBtn(slide);
       } else {
-        // toggle mute on tap while playing
-        vid.muted = !vid.muted;
+        vid.pause();
+        slide.classList.remove('is-playing');
       }
     });
 
