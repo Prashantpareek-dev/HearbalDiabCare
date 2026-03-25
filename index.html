@@ -45,7 +45,7 @@
       font-family: var(--font);
       background: var(--black);
       margin: 0;
-      padding: 20px 90px;
+      padding: 20px 40px;
       overflow-x: hidden;
       width: 100%
     }
@@ -134,7 +134,8 @@
       background: var(--black);
       position: relative;
       overflow: hidden;
-    
+      width: 100%;
+      height: 80vh;
       display: flex;
       flex-direction: column
     }
@@ -384,6 +385,42 @@
       display: block
     }
 
+    @media(min-width:768px) {
+      .pain-rows-wrap {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr)
+      }
+
+      .pain-row {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        min-height: unset;
+        border-bottom: none;
+        border-right: 2px solid rgba(0,0,0,.06);
+        direction: ltr !important
+      }
+
+      .pain-row:last-of-type {
+        border-right: none
+      }
+
+      .pain-row:nth-child(even) {
+        direction: ltr
+      }
+
+      .pain-img {
+        width: 100%;
+        height: clamp(140px, 15vw, 220px);
+        object-fit: cover
+      }
+
+      .pain-text {
+        padding: clamp(12px, 2vw, 18px);
+        text-align: center;
+        align-items: center
+      }
+    }
+
     .pain-footer {
       background: var(--green);
       padding: clamp(16px, 4.5vw, 24px) var(--pad-x);
@@ -577,6 +614,51 @@
       color: #fff;
       font-size: clamp(15px, 4vw, 21px);
       font-weight: 700
+    }
+
+    @media(min-width:768px) {
+      .hiw-cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin-top: clamp(20px, 5vw, 30px)
+      }
+
+      .hiw-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        border-bottom: none;
+        border-radius: 14px;
+        background: var(--gp);
+        box-shadow: 0 2px 16px rgba(0,0,0,.07);
+        overflow: hidden;
+        grid-template-columns: unset
+      }
+
+      .hiw-card:nth-child(even) {
+        grid-template-columns: unset
+      }
+
+      .hiw-card-img {
+        width: 100%;
+        height: clamp(140px, 14vw, 200px);
+        object-fit: contain
+      }
+
+      .hiw-card:nth-child(even) .hiw-card-img {
+        order: unset
+      }
+
+      .hiw-card:nth-child(even) .hiw-body {
+        order: unset
+      }
+
+      .hiw-body {
+        align-items: center;
+        padding: clamp(12px, 2vw, 20px)
+      }
     }
 
     /* BEFORE AFTER */
@@ -792,6 +874,23 @@
 
     .ing-card:nth-child(4) {
       clip-path: polygon(0 0, 100% 0, 100% 100%, 5% 100%)
+    }
+
+    @media(min-width:768px) {
+      .ing-grid {
+        grid-template-columns: repeat(4, 1fr)
+      }
+
+      .ing-card:nth-child(1),
+      .ing-card:nth-child(2),
+      .ing-card:nth-child(3),
+      .ing-card:nth-child(4) {
+        clip-path: none
+      }
+
+      .ing-hint {
+        display: block
+      }
     }
 
     .ing-img {
@@ -1313,6 +1412,50 @@
     .offer-row-text span {
       font-size: clamp(12px, 3.2vw, 15px);
       color: rgba(255, 255, 255, .75)
+    }
+
+    @media(min-width:768px) {
+      .offer-sec > div:not(.offer-top):not(.offer-cta) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0
+      }
+
+      .offer-row {
+        grid-template-columns: 1fr;
+        border-top: none;
+        border-right: 1px solid rgba(255,255,255,.12);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center
+      }
+
+      .offer-row:last-child {
+        border-right: none
+      }
+
+      .offer-row:nth-child(even) {
+        grid-template-columns: 1fr
+      }
+
+      .offer-row-img {
+        width: 100%;
+        height: clamp(366px, 14vw, 180px);
+        object-fit: cover
+      }
+
+      .offer-row:nth-child(even) .offer-row-img {
+        order: unset
+      }
+
+      .offer-row:nth-child(even) .offer-row-text {
+        order: unset
+      }
+
+      .offer-row-text {
+        align-items: center
+      }
     }
 
     .offer-cta {
@@ -2364,11 +2507,13 @@
     .resp-banner {
       display: block;
       width: 100%;
+      height: 100vh;
+      object-fit: cover;
       line-height: 0
     }
     .resp-banner img {
       width: 100%;
-      height: auto;
+      height: 100%;
       display: block
     }
     .resp-banner .banner-desktop { display: block }
@@ -2391,12 +2536,11 @@
   </div>
 
   <!-- HOOK -->
-  <section class="hook">
-        <!-- RESPONSIVE BANNER -->
-  <div class="resp-banner">
-    <img src="./Image/Hook1.png" alt="" class="banner-desktop">
+  <section class="hook">    
+   <div class="resp-banner">
+    <img src="./Image/Hook2.png" alt="" class="banner-desktop">
     <img src="./Image/Hook2.png" alt="" class="banner-mobile">
-  </div>
+   </div>
     <div class="hook-cta-bar">
       <div class="info"><strong>10% OFF + FREE DELIVERY</strong><span>Limited Time Offer</span></div>
       <a href="#order" class="btn-now">ઓર્ડર કરો</a>
@@ -2411,6 +2555,7 @@
       <span class="eyebrow" style="color:var(--green)">⚠️ સમસ્યા</span>
       <h2 class="sec-title">આ સમસ્યાઓ <span class="acc" style="color:var(--green)">તમને પણ છે?</span></h2>
     </div>
+    <div class="pain-rows-wrap">
     <div class="pain-row"><img src="./Image/Pain1.png" alt=""
         class="pain-img">
       <div class="pain-text"><span class="pain-icon-lg">📈</span>
@@ -2441,10 +2586,81 @@
         <p>ભવિષ્યમાં Complication નો ડર</p><small>Heart, kidney, eye risk</small>
       </div>
     </div>
+    </div>
     <div class="pain-footer">
       <div class="ico">👉</div>
       <p>સાચી સમસ્યા માત્ર શૂગર નથી, પણ શરીરનું imbalance + lifestyle છે</p>
     </div>
+  </section>
+
+  <!-- INSTAGRAM REELS SWIPER -->
+  <section class="reels-sec">
+    <div class="reels-head">
+      <span class="eyebrow" style="color:var(--gl)">📱 Instagram Reels</span>
+      <h2 class="sec-title">Real People, <span class="acc">Real Results</span></h2>
+      <p class="sec-sub" style="margin-top:8px">DiabCare વાપરતા લોકોના experience જુઓ</p>
+    </div>
+    <div class="reels-swiper-wrap">
+      <div class="swiper reels-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide reel-slide">
+            <div class="reel-inner"><video src="./Image/Video1.mp4" 
+              autoPlay playsinline></video></div>
+            <div class="reel-overlay"></div>
+            <div class="reel-play">▶</div>
+            <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@diabcare_official</span></div>
+          </div>
+          <div class="swiper-slide reel-slide">
+            <div class="reel-inner"><video src="./Image/Video2.mp4" 
+              autoPlay playsinline></video></div>
+            <div class="reel-overlay"></div>
+            <div class="reel-play">▶</div>
+            <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@health_gujarat</span></div>
+          </div>
+          <div class="swiper-slide reel-slide">
+            <div class="reel-inner"><video src="./Image/Video3.MOV" 
+              autoPlay playsinline></video></div>
+            <div class="reel-overlay"></div>
+            <div class="reel-play">▶</div>
+            <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@ayurveda_tips</span></div>
+          </div>
+          <div class="swiper-slide reel-slide">
+            <div class="reel-inner"><video src="./Image/Video4.mp4"
+              autoPlay playsinline></video></div>
+            <div class="reel-overlay"></div>
+            <div class="reel-play">▶</div>
+            <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@sugar_free_life</span></div>
+          </div>
+          <div class="swiper-slide reel-slide">
+            <div class="reel-inner"><video src="./Image/Video5.mp4"
+              autoPlay playsinline></video></div>
+            <div class="reel-overlay"></div>
+            <div class="reel-play">▶</div>
+            <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@natural_health_in</span></div>
+          </div>
+          <div class="swiper-slide reel-slide">
+            <div class="reel-inner"><video src="./Image/Video6.mp4"
+              autoPlay playsinline></video></div>
+            <div class="reel-overlay"></div>
+            <div class="reel-play">▶</div>
+            <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@diabcare_results</span></div>
+          </div>
+          <div class="swiper-slide reel-slide">
+            <div class="reel-inner"><video src="./Image/Vedio7.mp4"
+              autoPlay playsinline></video></div>
+            <div class="reel-overlay"></div>
+            <div class="reel-play">▶</div>
+            <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@wellness_wala</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="reels-nav">
+        <button class="r-btn" id="rPrev">&#8592;</button>
+        <!-- <div class="r-pag swiper-pagination" id="rPag"></div> -->
+        <button class="r-btn" id="rNext">&#8594;</button>
+      </div>
+    </div>
+
   </section>
 
   <!-- INTRO -->
@@ -2714,69 +2930,6 @@
           કરો</small></a></div>
   </section>
 
-  <!-- INSTAGRAM REELS SWIPER -->
-  <section class="reels-sec">
-    <div class="reels-head">
-      <span class="eyebrow" style="color:var(--gl)">📱 Instagram Reels</span>
-      <h2 class="sec-title">Real People, <span class="acc">Real Results</span></h2>
-      <p class="sec-sub" style="margin-top:8px">DiabCare વાપરતા લોકોના experience જુઓ</p>
-    </div>
-    <div class="reels-swiper-wrap">
-      <div class="swiper reels-swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide reel-slide">
-            <div class="reel-inner"><video src="./Image/Video1.mp4" playsinline></video></div>
-            <div class="reel-overlay"></div>
-            <div class="reel-play">▶</div>
-            <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@diabcare_official</span></div>
-          </div>
-          <div class="swiper-slide reel-slide">
-            <div class="reel-inner"><video src="./Image/Video2.mp4" playsinline></video></div>
-            <div class="reel-overlay"></div>
-            <div class="reel-play">▶</div>
-            <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@health_gujarat</span></div>
-          </div>
-          <div class="swiper-slide reel-slide">
-            <div class="reel-inner"><video src="./Image/Video3.MOV" playsinline></video></div>
-            <div class="reel-overlay"></div>
-            <div class="reel-play">▶</div>
-            <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@ayurveda_tips</span></div>
-          </div>
-          <div class="swiper-slide reel-slide">
-            <div class="reel-inner"><video src="./Image/Video4.mp4" playsinline></video></div>
-            <div class="reel-overlay"></div>
-            <div class="reel-play">▶</div>
-            <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@sugar_free_life</span></div>
-          </div>
-          <div class="swiper-slide reel-slide">
-            <div class="reel-inner"><video src="./Image/Video5.mp4" playsinline></video></div>
-            <div class="reel-overlay"></div>
-            <div class="reel-play">▶</div>
-            <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@natural_health_in</span></div>
-          </div>
-          <div class="swiper-slide reel-slide">
-            <div class="reel-inner"><video src="./Image/Video6.mp4" playsinline></video></div>
-            <div class="reel-overlay"></div>
-            <div class="reel-play">▶</div>
-            <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@diabcare_results</span></div>
-          </div>
-          <div class="swiper-slide reel-slide">
-            <div class="reel-inner"><video src="./Image/Vedio7.mp4" playsinline></video></div>
-            <div class="reel-overlay"></div>
-            <div class="reel-play">▶</div>
-            <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@wellness_wala</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="reels-nav">
-        <button class="r-btn" id="rPrev">&#8592;</button>
-        <!-- <div class="r-pag swiper-pagination" id="rPag"></div> -->
-        <button class="r-btn" id="rNext">&#8594;</button>
-      </div>
-    </div>
-
-  </section>
-
   <!-- YOUTUBE REVIEWS -->
   <section class="yt-sec">
     <span class="eyebrow" style="color:var(--green)">▶️ YouTube Reviews</span>
@@ -3020,14 +3173,25 @@
       });
     }
 
-    rSwiper.on('slideChange', pauseAllReels);
+    function playActiveReel() {
+      const activeSlide = document.querySelector('.reels-swiper .swiper-slide-active.reel-slide');
+      if (!activeSlide) return;
+      const vid = activeSlide.querySelector('video');
+      if (!vid) return;
+      activeSlide.classList.add('is-playing');
+      vid.muted = true;
+      vid.play().catch(() => {});
+    }
+
+    rSwiper.on('slideChange', () => { pauseAllReels(); setTimeout(playActiveReel, 100); });
+    rSwiper.on('init', () => setTimeout(playActiveReel, 300));
 
     // When video ends, auto-swipe to next slide
     document.querySelectorAll('.reels-swiper .swiper-slide video').forEach(v => {
       v.addEventListener('ended', () => rSwiper.slideNext());
     });
 
-    // Tap active slide to play / pause (event delegation handles Swiper loop clones)
+    // Tap active slide to toggle mute / pause
     document.querySelector('.reels-swiper').addEventListener('click', e => {
       const slide = e.target.closest('.reel-slide');
       if (!slide || !slide.classList.contains('swiper-slide-active')) return;
@@ -3036,11 +3200,11 @@
       if (vid.paused) {
         pauseAllReels();
         slide.classList.add('is-playing');
-        vid.muted = false;
-        vid.play().catch(() => { vid.muted = true; vid.play().catch(() => {}); });
+        vid.muted = true;
+        vid.play().catch(() => {});
       } else {
-        slide.classList.remove('is-playing');
-        vid.pause();
+        // toggle mute on tap while playing
+        vid.muted = !vid.muted;
       }
     });
 
