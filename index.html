@@ -16,6 +16,12 @@
       padding: 0
     }
 
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block
+    }
+
     :root {
       --black: #0a0a0a;
       --deep: #0d160f;
@@ -42,6 +48,19 @@
       padding: 20px 90px;
       overflow-x: hidden;
       width: 100%
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 16px
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 12px
+      }
+      
     }
 
     /* TICKER */
@@ -115,7 +134,7 @@
       background: var(--black);
       position: relative;
       overflow: hidden;
-      min-height: 100svh;
+    
       display: flex;
       flex-direction: column
     }
@@ -312,7 +331,7 @@
     .pain-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      min-height: clamp(130px, 35vw, 185px);
+      min-height: clamp(130px, 35vw, 420px);
       overflow: hidden;
       border-bottom: 2px solid rgba(0, 0, 0, .04)
     }
@@ -327,7 +346,7 @@
 
     .pain-img {
       width: 100%;
-      height: clamp(130px, 35vw, 185px);
+      height: clamp(130px, 35vw, 420px);
       object-fit: cover;
       display: block;
       filter: brightness(.88)
@@ -420,9 +439,10 @@
     }
 
     .intro-product img {
-      width: min(190px, 48vw);
-      object-fit: contain;
+      width: min(590px, 88vw);
+      object-fit: cover;
       position: relative;
+      border-radius: 25%;
       z-index: 2;
       filter: drop-shadow(0 0 34px rgba(34, 168, 61, .5));
       animation: fl 3s ease-in-out infinite
@@ -477,7 +497,7 @@
 
     .hiw-card {
       display: grid;
-      grid-template-columns: clamp(100px, 26vw, 145px) 1fr;
+      grid-template-columns: clamp(100px, 26vw, 220px) 1fr;
       border-bottom: 1px solid var(--gray);
       overflow: hidden;
       transition: .3s;
@@ -485,7 +505,7 @@
     }
 
     .hiw-card:nth-child(even) {
-      grid-template-columns: 1fr clamp(100px, 26vw, 145px)
+      grid-template-columns: 1fr clamp(100px, 26vw, 220px)
     }
 
     .hiw-card:hover {
@@ -493,9 +513,9 @@
     }
 
     .hiw-card-img {
-      width: clamp(100px, 26vw, 145px);
-      height: clamp(100px, 26vw, 145px);
-      object-fit: cover;
+      width: clamp(100px, 26vw, 220px);
+      height: clamp(100px, 26vw, 220px);
+      object-fit: contain;
       display: block;
       transition: transform .4s
     }
@@ -612,8 +632,9 @@
 
     .ba-col img {
       width: 100%;
-      height: clamp(150px, 40vw, 220px);
+      height: clamp(150px, 40vw, 380px);
       object-fit: cover;
+      object-position: center top;
       display: block
     }
 
@@ -775,8 +796,7 @@
 
     .ing-img {
       width: 100%;
-      height: clamp(140px, 36vw, 195px);
-      object-fit: cover;
+      height: auto;
       display: block;
       transition: transform .5s
     }
@@ -870,7 +890,10 @@
 
     .rec-col {
       border-radius: 14px;
-      overflow: hidden
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-self: stretch
     }
 
     .rec-col-h {
@@ -892,8 +915,8 @@
 
     .rec-col-img {
       width: 100%;
-      height: clamp(85px, 22vw, 115px);
-      object-fit: cover;
+      height: clamp(140px, 35vw, 320px);
+      object-fit: contain;
       display: block
     }
 
@@ -902,7 +925,8 @@
     }
 
     .rec-col-items {
-      background: rgba(255, 255, 255, .06)
+      background: rgba(255, 255, 255, .06);
+      flex: 1
     }
 
     .rec-item {
@@ -930,6 +954,12 @@
       background: var(--gl)
     }
 
+    .rec-rows-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 14px
+    }
+
     .rec-row {
       display: grid;
       grid-template-columns: clamp(80px, 20vw, 110px) 1fr;
@@ -939,7 +969,6 @@
       background: rgba(255, 255, 255, .05);
       border-radius: 14px;
       border: 1px solid rgba(34, 168, 61, .18);
-      margin-bottom: 14px;
       transition: .3s;
       cursor: default
     }
@@ -950,10 +979,32 @@
     }
 
     .rec-row img {
-      width: clamp(80px, 20vw, 110px);
-      height: clamp(70px, 18vw, 95px);
-      object-fit: cover;
+      width: clamp(110px, 28vw, 150px);
+      height: clamp(110px, 28vw, 150px);
+      object-fit: contain;
       border-radius: 10px
+    }
+
+    @media (min-width: 768px) {
+      .rec-rows-wrap {
+        flex-direction: row;
+        align-items: stretch
+      }
+
+      .rec-row {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center
+      }
+
+      .rec-row img {
+        width: 100%;
+        height: clamp(160px, 18vw, 220px);
+        object-fit: contain;
+        margin-bottom: 8px
+      }
     }
 
     .rec-row h4 {
@@ -989,18 +1040,8 @@
 
     .use-steps {
       margin-top: clamp(18px, 4.5vw, 26px);
-      position: relative
-    }
-
-    .use-steps::before {
-      content: '';
-      position: absolute;
-      left: clamp(50px, 13vw, 72px);
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: linear-gradient(var(--green), transparent);
-      pointer-events: none
+      display: flex;
+      flex-direction: column
     }
 
     .use-step {
@@ -1033,6 +1074,34 @@
       display: flex;
       flex-direction: column;
       justify-content: center
+    }
+
+    @media (min-width: 768px) {
+      .use-steps {
+        flex-direction: row;
+        align-items: stretch
+      }
+
+      .use-step {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        border-bottom: none;
+        border-right: 1px solid var(--gray)
+      }
+
+      .use-step:last-child {
+        border-right: none
+      }
+
+      .use-step-img {
+        width: 100%;
+        height: clamp(160px, 20vw, 240px)
+      }
+
+      .use-body {
+        flex: 1
+      }
     }
 
     .use-num {
@@ -1070,19 +1139,28 @@
 
     .cert-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(10px, 3vw, 16px)
+    }
+
+    @media (min-width: 600px) {
+      .cert-grid {
+        grid-template-columns: repeat(4, 1fr)
+      }
     }
 
     .cert-card {
-      background: rgba(255, 255, 255, .05);
+      background: rgba(255, 255, 255, .06);
       border: 1px solid rgba(34, 168, 61, .22);
       border-radius: 14px;
       overflow: hidden;
       text-align: center;
       transition: .3s;
       cursor: default;
-      position: relative
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center
     }
 
     .cert-card::before {
@@ -1105,9 +1183,12 @@
 
     .cert-img {
       width: 100%;
-      height: clamp(55px, 15vw, 80px);
-      object-fit: cover;
-      filter: grayscale(25%);
+      height: auto;
+      max-height: clamp(100px, 25vw, 160px);
+      object-fit: contain;
+      padding: clamp(12px, 3vw, 20px);
+      display: block;
+      filter: grayscale(20%);
       transition: filter .3s
     }
 
@@ -1184,7 +1265,7 @@
 
     .offer-row {
       display: grid;
-      grid-template-columns: clamp(75px, 19vw, 98px) 1fr;
+      grid-template-columns: clamp(90px, 28vw, 130px) 1fr;
       border-top: 1px solid rgba(255, 255, 255, .12);
       background: rgba(255, 255, 255, .07);
       transition: .3s;
@@ -1196,12 +1277,12 @@
     }
 
     .offer-row:nth-child(even) {
-      grid-template-columns: 1fr clamp(75px, 19vw, 98px)
+      grid-template-columns: 1fr clamp(90px, 28vw, 130px)
     }
 
     .offer-row-img {
-      width: clamp(75px, 19vw, 98px);
-      height: clamp(75px, 19vw, 98px);
+      width: 100%;
+      height: clamp(90px, 22vw, 130px);
       object-fit: cover;
       display: block
     }
@@ -1335,13 +1416,15 @@
       border-radius: 18px
     }
 
-    .reel-slide iframe {
+    .reel-slide iframe,
+    .reel-slide video {
       width: 100%;
       height: 100%;
       border: none;
       display: block;
       border-radius: 18px;
-      pointer-events: none
+      pointer-events: none;
+      object-fit: cover
     }
 
     .swiper-slide-active.reel-slide {
@@ -1351,7 +1434,8 @@
       opacity: 1
     }
 
-    .swiper-slide-active.reel-slide iframe {
+    .swiper-slide-active.reel-slide iframe,
+    .swiper-slide-active.reel-slide video {
       pointer-events: auto
     }
 
@@ -1418,6 +1502,11 @@
     }
 
     .swiper-slide-active.reel-slide .reel-play {
+      opacity: 1;
+      pointer-events: auto;
+      cursor: pointer
+    }
+    .swiper-slide-active.reel-slide.is-playing .reel-play {
       opacity: 0;
       pointer-events: none
     }
@@ -2270,6 +2359,24 @@
         background: rgba(255, 255, 255, .05)
       }
     }
+
+    /* Responsive Banner */
+    .resp-banner {
+      display: block;
+      width: 100%;
+      line-height: 0
+    }
+    .resp-banner img {
+      width: 100%;
+      height: auto;
+      display: block
+    }
+    .resp-banner .banner-desktop { display: block }
+    .resp-banner .banner-mobile  { display: none  }
+    @media (max-width: 767px) {
+      .resp-banner .banner-desktop { display: none  }
+      .resp-banner .banner-mobile  { display: block }
+    }
   </style>
 </head>
 
@@ -2285,23 +2392,17 @@
 
   <!-- HOOK -->
   <section class="hook">
-    <div class="hook-noise"></div>
-    <div class="hook-inner">
-      <div class="brand-pill">
-        <div class="live"></div><span>DiabCare</span>
-      </div>
-      <h1 class="hook-h1">રોજ શૂગર ચેક કરીને<span class="acc">થાકી ગયા છો?</span></h1>
-      <p class="hook-sub">હવે સરળ રૂટીન અને નેચરલ સપોર્ટ સાથે <strong style="color:#fff">બ્લડ શૂગર મેનેજ કરવું બની શકે
-          સરળ.</strong></p>
-    </div>
-    <div class="hook-product">
-      <img src="./Image/Product.avif" alt="DiabCare Product">
-      <div class="hook-glow"></div>
-    </div>
+        <!-- RESPONSIVE BANNER -->
+  <div class="resp-banner">
+    <img src="./Image/Hook1.png" alt="" class="banner-desktop">
+    <img src="./Image/Hook2.png" alt="" class="banner-mobile">
+  </div>
     <div class="hook-cta-bar">
       <div class="info"><strong>10% OFF + FREE DELIVERY</strong><span>Limited Time Offer</span></div>
       <a href="#order" class="btn-now">ઓર્ડર કરો</a>
     </div>
+
+ 
   </section>
 
   <!-- PAIN -->
@@ -2310,31 +2411,31 @@
       <span class="eyebrow" style="color:var(--green)">⚠️ સમસ્યા</span>
       <h2 class="sec-title">આ સમસ્યાઓ <span class="acc" style="color:var(--green)">તમને પણ છે?</span></h2>
     </div>
-    <div class="pain-row"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&q=80" alt=""
+    <div class="pain-row"><img src="./Image/Pain1.png" alt=""
         class="pain-img">
       <div class="pain-text"><span class="pain-icon-lg">📈</span>
         <p>વારંવાર શૂગર વધી જવી</p><small>Uncontrolled spikes</small>
       </div>
     </div>
-    <div class="pain-row"><img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500&q=80" alt=""
+    <div class="pain-row"><img src="./Image/Pain2.png" alt=""
         class="pain-img">
       <div class="pain-text"><span class="pain-icon-lg">💊</span>
         <p>દવા લીધા પછી પણ સ્ટેબલ ન થવી</p><small>No stability despite meds</small>
       </div>
     </div>
-    <div class="pain-row"><img src="https://images.unsplash.com/photo-1543233019-c6473ca0c1cc?w=500&q=80" alt=""
+    <div class="pain-row"><img src="./Image/Pain3.png" alt=""
         class="pain-img">
       <div class="pain-text"><span class="pain-icon-lg">😔</span>
         <p>થાક, ચીડિયાપણું અને કમજોરી</p><small>Fatigue & irritability</small>
       </div>
     </div>
-    <div class="pain-row"><img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=500&q=80" alt=""
+    <div class="pain-row"><img src="./Image/Pain4.png" alt=""
         class="pain-img">
       <div class="pain-text"><span class="pain-icon-lg">🚫</span>
         <p>ખાવા-પીવામાં સતત રોકટોક</p><small>Constant restrictions</small>
       </div>
     </div>
-    <div class="pain-row"><img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=500&q=80" alt=""
+    <div class="pain-row"><img src="./Image/Pain5.png" alt=""
         class="pain-img">
       <div class="pain-text"><span class="pain-icon-lg">💔</span>
         <p>ભવિષ્યમાં Complication નો ડર</p><small>Heart, kidney, eye risk</small>
@@ -2352,10 +2453,10 @@
     <span class="eyebrow" style="color:var(--gl)">🌿 DiabCare</span>
     <h2 class="sec-title" style="color:#fff;text-align:center">Natural Solution <span class="acc">For Sugar
         Balance</span></h2>
-    <div class="intro-product"><img src="./Image/Product.avif" alt="DiabCare"></div>
+    <div class="intro-product"><img src="./Image/Intro.png" alt="DiabCare"></div>
     <p class="intro-desc">આ એક નેચરલ સપોર્ટ ફોર્મ્યુલા છે જે શરીરને અંદરથી balance કરવામાં મદદ કરે છે, જેથી બ્લડ શૂગર
       મેનેજ કરવું સરળ બને.</p>
-  </section>
+  </section> 
 
   <!-- HOW IT WORKS -->
   <section class="hiw-sec">
@@ -2363,28 +2464,28 @@
       <h2 class="sec-title">DiabCare <span class="acc" style="color:var(--green)">અંદરથી કામ કરે</span></h2>
     </div>
     <div class="hiw-cards">
-      <div class="hiw-card"><img src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=400&q=80" alt=""
+      <div class="hiw-card"><img src="./Image/Step4.png" alt=""
           class="hiw-card-img">
         <div class="hiw-body"><span class="hiw-num">Step 01</span>
           <h3>Insulin Sensitivity</h3>
           <p>શરીરમાં insulin sensitivity ને સપોર્ટ કરે છે</p>
         </div>
       </div>
-      <div class="hiw-card"><img src="https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?w=400&q=80" alt=""
+      <div class="hiw-card"><img src="./Image/Step3.png" alt=""
           class="hiw-card-img">
         <div class="hiw-body"><span class="hiw-num">Step 02</span>
           <h3>Glucose Regulate</h3>
           <p>Glucose absorption ને regulate કરવામાં મદદ કરે</p>
         </div>
       </div>
-      <div class="hiw-card"><img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&q=80" alt=""
+      <div class="hiw-card"><img src="./Image/Step2.png" alt=""
           class="hiw-card-img">
         <div class="hiw-body"><span class="hiw-num">Step 03</span>
           <h3>Metabolism સુધારે</h3>
           <p>શરીરનો metabolism સ્વસ્થ બનાવે છે</p>
         </div>
       </div>
-      <div class="hiw-card"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&q=80" alt=""
+      <div class="hiw-card"><img src="./Image/Step1.png" alt=""
           class="hiw-card-img">
         <div class="hiw-body"><span class="hiw-num">Step 04</span>
           <h3>Energy વધારે</h3>
@@ -2408,48 +2509,23 @@
     </div>
     <div class="ba-pair">
       <div class="ba-divider"></div>
-      <div class="ba-col b"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=500&q=80" alt="">
+      <div class="ba-col b"><img src="./Image/Before1.png" alt="">
         <div class="ba-cap">અનિયંત્રિત શૂગર, થાક, ચિંતા</div>
       </div>
-      <div class="ba-col a"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&q=80" alt="">
+      <div class="ba-col a"><img src="./Image/After1.png" alt="">
         <div class="ba-cap">Stable Sugar, Energy, ખુશ જીવન</div>
       </div>
     </div>
     <div class="ba-pair" style="margin-top:2px">
       <div class="ba-divider"></div>
-      <div class="ba-col b"><img src="https://images.unsplash.com/photo-1603398938378-e54eab446dde?w=500&q=80" alt="">
+      <div class="ba-col b"><img src="./Image/Before2.png" alt="">
         <div class="ba-cap">દૈનિક ઘણી દવાઓ</div>
       </div>
-      <div class="ba-col a"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500&q=80" alt="">
+      <div class="ba-col a"><img src="./Image/After2.png" alt="">
         <div class="ba-cap">Natural Routine Support</div>
       </div>
     </div>
-    <div class="ba-points">
-      <div class="ba-pt">
-        <div class="ba-pt-icon bad">😫</div>
-        <div class="ba-pt-text"><strong>પહેલા: Constant Sugar Spikes</strong>
-          <p>રોજ ઉપર-નીચે જતી શૂગર</p>
-        </div>
-      </div>
-      <div class="ba-pt">
-        <div class="ba-pt-icon good">✅</div>
-        <div class="ba-pt-text"><strong>પછી: Stable Blood Sugar</strong>
-          <p>DiabCare સાથે balanced levels</p>
-        </div>
-      </div>
-      <div class="ba-pt">
-        <div class="ba-pt-icon bad">😩</div>
-        <div class="ba-pt-text"><strong>પહેલા: Low Energy & Weakness</strong>
-          <p>સવારથી સાંજ થાક</p>
-        </div>
-      </div>
-      <div class="ba-pt">
-        <div class="ba-pt-icon good">⚡</div>
-        <div class="ba-pt-text"><strong>પછી: Improved Energy</strong>
-          <p>દિવસ energetic અને active</p>
-        </div>
-      </div>
-    </div>
+ 
   </section>
 
   <!-- INGREDIENTS -->
@@ -2458,28 +2534,28 @@
       <h2 class="sec-title">100% Natural <span class="acc" style="color:var(--green)">Ayurvedic Herbs</span></h2>
     </div>
     <div class="ing-grid">
-      <div class="ing-card"><img src="https://images.unsplash.com/photo-1611073615830-9a9e6b38e7e9?w=500&q=80" alt=""
+      <div class="ing-card"><img src="./Image/Ind1.png" alt=""
           class="ing-img">
         <div class="ing-overlay"></div>
         <div class="ing-info"><span class="ing-name">અશ્વગંધા</span>
           <p class="ing-hint">Stress ઓછો કરી sugar balance support</p>
         </div>
       </div>
-      <div class="ing-card"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&q=80" alt=""
+      <div class="ing-card"><img src="./Image/Ind2.png" alt=""
           class="ing-img">
         <div class="ing-overlay"></div>
         <div class="ing-info"><span class="ing-name">ત્રિફળા</span>
           <p class="ing-hint">Digestion & metabolism support</p>
         </div>
       </div>
-      <div class="ing-card"><img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=500&q=80" alt=""
+      <div class="ing-card"><img src="./Image/Ind3.png" alt=""
           class="ing-img">
         <div class="ing-overlay"></div>
         <div class="ing-info"><span class="ing-name">ગિલોય</span>
           <p class="ing-hint">Immunity & blood purification</p>
         </div>
       </div>
-      <div class="ing-card"><img src="https://images.unsplash.com/photo-1603833665858-e61d17a86224?w=500&q=80" alt=""
+      <div class="ing-card"><img src="./Image/Ind4.png" alt=""
           class="ing-img">
         <div class="ing-overlay"></div>
         <div class="ing-info"><span class="ing-name">વચા</span>
@@ -2500,7 +2576,7 @@
     <div class="rec-compare">
       <div class="rec-col old">
         <div class="rec-col-h">❌ સામાન્ય રીત</div><img
-          src="https://images.unsplash.com/photo-1550572017-edd951aa8f72?w=400&q=80" alt="" class="rec-col-img">
+          src="./Image/Before.png" alt="" class="rec-col-img">
         <div class="rec-col-items">
           <div class="rec-item">
             <div class="rdot"></div>માત્ર દવા પર આધાર
@@ -2515,7 +2591,7 @@
       </div>
       <div class="rec-col new">
         <div class="rec-col-h">✅ DiabCare રીત</div><img
-          src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&q=80" alt="" class="rec-col-img">
+          src="./Image/After.png" alt="" class="rec-col-img">
         <div class="rec-col-items">
           <div class="rec-item">
             <div class="rdot"></div>Holistic approach
@@ -2529,22 +2605,24 @@
         </div>
       </div>
     </div>
-    <div class="rec-row"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&q=80" alt="">
-      <div>
-        <h4>Ayurvedic Principles</h4>
-        <p>Ayurvedic principles પર આધારિત formula</p>
+    <div class="rec-rows-wrap">
+      <div class="rec-row"><img src="./Image/rec1.png" alt="">
+        <div>
+          <h4>Ayurvedic Principles</h4>
+          <p>Ayurvedic principles પર આધારિત formula</p>
+        </div>
       </div>
-    </div>
-    <div class="rec-row"><img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&q=80" alt="">
-      <div>
-        <h4>Lifestyle Approach</h4>
-        <p>Lifestyle + natural support approach</p>
+      <div class="rec-row"><img src="./Image/rec2.png" alt="">
+        <div>
+          <h4>Lifestyle Approach</h4>
+          <p>Lifestyle + natural support approach</p>
+        </div>
       </div>
-    </div>
-    <div class="rec-row"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&q=80" alt="">
-      <div>
-        <h4>Trusted by Many</h4>
-        <p>ઘણા લોકો daily routine સાથે ઉપયોગ કરી રહ્યા છે</p>
+      <div class="rec-row"><img src="./Image/rec3.png" alt="">
+        <div>
+          <h4>Trusted by Many</h4>
+          <p>ઘણા લોકો daily routine સાથે ઉપયોગ કરી રહ્યા છે</p>
+        </div>
       </div>
     </div>
   </section>
@@ -2555,21 +2633,21 @@
       <h2 class="sec-title">કેવી રીતે <span class="acc" style="color:var(--green)">ઉપયોગ કરવો?</span></h2>
     </div>
     <div class="use-steps">
-      <div class="use-step"><img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&q=80" alt=""
+      <div class="use-step"><img src="./Image/How3.png" alt=""
           class="use-step-img">
         <div class="use-body"><span class="use-num">Step 01</span>
           <h3>1–2 વખત લો</h3>
           <p>દિવસમાં 1–2 વખત (doctor/advice મુજબ)</p>
         </div>
       </div>
-      <div class="use-step"><img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=400&q=80" alt=""
+      <div class="use-step"><img src="./Image/How2.png" alt=""
           class="use-step-img">
         <div class="use-body"><span class="use-num">Step 02</span>
           <h3>ભોજન પછી</h3>
           <p>ભોજન પછી લેવુ વધુ સારું</p>
         </div>
       </div>
-      <div class="use-step"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&q=80" alt=""
+      <div class="use-step"><img src="./Image/How1.png" alt=""
           class="use-step-img">
         <div class="use-body"><span class="use-num">Step 03</span>
           <h3>નિયમિત ઉપયોગ</h3>
@@ -2584,25 +2662,25 @@
     <span class="eyebrow" style="color:var(--gl)">✅ Certified</span>
     <h2 class="sec-title" style="color:#fff">Quality & <span class="acc">Safety Assured</span></h2>
     <div class="cert-grid">
-      <div class="cert-card"><img src="https://images.unsplash.com/photo-1568219557405-376e23e4f7cf?w=400&q=80" alt=""
+      <div class="cert-card"><img src="./Image/Trust1.png" alt=""
           class="cert-img">
         <div class="cert-info"><span class="cert-name">GMP Certified</span>
           <p class="cert-desc">Good Manufacturing Practice</p>
         </div>
       </div>
-      <div class="cert-card"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&q=80" alt=""
+      <div class="cert-card"><img src="./Image/Trust2.png" alt=""
           class="cert-img">
         <div class="cert-info"><span class="cert-name">ISO Certified</span>
           <p class="cert-desc">International Quality Standard</p>
         </div>
       </div>
-      <div class="cert-card"><img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=400&q=80" alt=""
+      <div class="cert-card"><img src="./Image/Trust3.png" alt=""
           class="cert-img">
         <div class="cert-info"><span class="cert-name">AYUSH Approved</span>
           <p class="cert-desc">Ministry of AYUSH</p>
         </div>
       </div>
-      <div class="cert-card"><img src="https://images.unsplash.com/photo-1607619662634-3ac55ec0e216?w=400&q=80" alt=""
+      <div class="cert-card"><img src="./Image/Trust4.png" alt=""
           class="cert-img">
         <div class="cert-info"><span class="cert-name">FSSAI Registered</span>
           <p class="cert-desc">Food Safety Standards</p>
@@ -2619,19 +2697,15 @@
       <p class="offer-sub">Special discount + Free gifts સાથે</p>
     </div>
     <div>
-      <div class="offer-row"><img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=300&q=80" alt=""
+      <div class="offer-row"><img src="./Image/offer1.avif" alt=""
           class="offer-row-img">
         <div class="offer-row-text"><strong>🚚 FREE Delivery</strong><span>ઘરે ઘરે ફ્રી ડિલિવરી</span></div>
       </div>
-      <div class="offer-row"><img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=300&q=80" alt=""
+      <div class="offer-row"><img src="./Image/offer2.avif" alt=""
           class="offer-row-img">
         <div class="offer-row-text"><strong>🥗 FREE Diet Chart</strong><span>Expert-designed diet plan</span></div>
       </div>
-      <div class="offer-row"><img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=300&q=80" alt=""
-          class="offer-row-img">
-        <div class="offer-row-text"><strong>💵 Cash on Delivery</strong><span>COD ઉપલબ્ધ – No advance</span></div>
-      </div>
-      <div class="offer-row"><img src="https://images.unsplash.com/photo-1607082349566-187342175e2f?w=300&q=80" alt=""
+      <div class="offer-row"><img src="./Image/offer3.avif" alt=""
           class="offer-row-img">
         <div class="offer-row-text"><strong>🏷️ 10% OFF</strong><span>Today only – Limited stock</span></div>
       </div>
@@ -2651,57 +2725,43 @@
       <div class="swiper reels-swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide reel-slide">
-            <div class="reel-inner"><iframe
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=1&rel=0&modestbranding=1&playsinline=1"
-                allowfullscreen allow="autoplay; encrypted-media"></iframe></div>
+            <div class="reel-inner"><video src="./Image/Video1.mp4" playsinline></video></div>
             <div class="reel-overlay"></div>
             <div class="reel-play">▶</div>
             <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@diabcare_official</span></div>
           </div>
           <div class="swiper-slide reel-slide">
-            <div class="reel-inner"><iframe
-                src="https://www.youtube.com/embed/L_jWHffIx5E?controls=1&rel=0&modestbranding=1&playsinline=1"
-                allowfullscreen allow="autoplay; encrypted-media"></iframe></div>
+            <div class="reel-inner"><video src="./Image/Video2.mp4" playsinline></video></div>
             <div class="reel-overlay"></div>
             <div class="reel-play">▶</div>
             <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@health_gujarat</span></div>
           </div>
           <div class="swiper-slide reel-slide">
-            <div class="reel-inner"><iframe
-                src="https://www.youtube.com/embed/ZbZSe6N_BXs?controls=1&rel=0&modestbranding=1&playsinline=1"
-                allowfullscreen allow="autoplay; encrypted-media"></iframe></div>
+            <div class="reel-inner"><video src="./Image/Video3.MOV" playsinline></video></div>
             <div class="reel-overlay"></div>
             <div class="reel-play">▶</div>
             <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@ayurveda_tips</span></div>
           </div>
           <div class="swiper-slide reel-slide">
-            <div class="reel-inner"><iframe
-                src="https://www.youtube.com/embed/9bZkp7q19f0?controls=1&rel=0&modestbranding=1&playsinline=1"
-                allowfullscreen allow="autoplay; encrypted-media"></iframe></div>
+            <div class="reel-inner"><video src="./Image/Video4.mp4" playsinline></video></div>
             <div class="reel-overlay"></div>
             <div class="reel-play">▶</div>
             <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@sugar_free_life</span></div>
           </div>
           <div class="swiper-slide reel-slide">
-            <div class="reel-inner"><iframe
-                src="https://www.youtube.com/embed/kJQP7kiw5Fk?controls=1&rel=0&modestbranding=1&playsinline=1"
-                allowfullscreen allow="autoplay; encrypted-media"></iframe></div>
+            <div class="reel-inner"><video src="./Image/Video5.mp4" playsinline></video></div>
             <div class="reel-overlay"></div>
             <div class="reel-play">▶</div>
             <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@natural_health_in</span></div>
           </div>
           <div class="swiper-slide reel-slide">
-            <div class="reel-inner"><iframe
-                src="https://www.youtube.com/embed/RgKAFK5djSk?controls=1&rel=0&modestbranding=1&playsinline=1"
-                allowfullscreen allow="autoplay; encrypted-media"></iframe></div>
+            <div class="reel-inner"><video src="./Image/Video6.mp4" playsinline></video></div>
             <div class="reel-overlay"></div>
             <div class="reel-play">▶</div>
             <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@diabcare_results</span></div>
           </div>
           <div class="swiper-slide reel-slide">
-            <div class="reel-inner"><iframe
-                src="https://www.youtube.com/embed/CevxZvSJLk8?controls=1&rel=0&modestbranding=1&playsinline=1"
-                allowfullscreen allow="autoplay; encrypted-media"></iframe></div>
+            <div class="reel-inner"><video src="./Image/Vedio7.mp4" playsinline></video></div>
             <div class="reel-overlay"></div>
             <div class="reel-play">▶</div>
             <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@wellness_wala</span></div>
@@ -2710,11 +2770,11 @@
       </div>
       <div class="reels-nav">
         <button class="r-btn" id="rPrev">&#8592;</button>
-        <div class="r-pag swiper-pagination" id="rPag"></div>
+        <!-- <div class="r-pag swiper-pagination" id="rPag"></div> -->
         <button class="r-btn" id="rNext">&#8594;</button>
       </div>
     </div>
-    <div class="ig-bar"><a href="#">📸 @diabcare_official</a><button class="ig-follow-btn">Follow કરો</button></div>
+
   </section>
 
   <!-- YOUTUBE REVIEWS -->
@@ -2723,11 +2783,11 @@
     <h2 class="sec-title">Customer Video <span class="acc" style="color:var(--green)">Reviews</span></h2>
     <div class="yt-cards">
       <div class="yt-card">
-        <div class="yt-embed"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1"
-            allowfullscreen loading="lazy"></iframe></div>
+        <div class="yt-embed"><iframe src="https://www.youtube.com/embed/FHkk6A3NlCU" allowfullscreen loading="lazy"></iframe></div>
         <div class="yt-card-body">
-          <div class="yt-rev"><img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=100&q=80" alt=""
-              class="yt-rev-img">
+          <div class="yt-rev">
+            <!-- <img src="https://www.youtube.com/embed/0EsBTsrSNsY" alt=""
+              class="yt-rev-img"> -->
             <div>
               <p class="yt-rev-name">રાજેશ પટેલ</p>
               <p class="yt-rev-loc">સુરત, ગુજરાત</p>
@@ -2739,11 +2799,12 @@
         </div>
       </div>
       <div class="yt-card">
-        <div class="yt-embed"><iframe src="https://www.youtube.com/embed/L_jWHffIx5E?rel=0&modestbranding=1"
+        <div class="yt-embed"><iframe src="https://www.youtube.com/embed/0EsBTsrSNsY"
             allowfullscreen loading="lazy"></iframe></div>
         <div class="yt-card-body">
-          <div class="yt-rev"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&q=80" alt=""
-              class="yt-rev-img">
+          <div class="yt-rev">
+            <!-- <img src="https://www.youtube.com/embed/FHkk6A3NlCU" alt=""
+              class="yt-rev-img"> -->
             <div>
               <p class="yt-rev-name">સ્મિતા શાહ</p>
               <p class="yt-rev-loc">અમદાવાદ, ગુજરાત</p>
@@ -2755,11 +2816,12 @@
         </div>
       </div>
       <div class="yt-card">
-        <div class="yt-embed"><iframe src="https://www.youtube.com/embed/ZbZSe6N_BXs?rel=0&modestbranding=1"
+        <div class="yt-embed"><iframe src="https://www.youtube.com/embed/N8_4mKkMY5o"
             allowfullscreen loading="lazy"></iframe></div>
         <div class="yt-card-body">
-          <div class="yt-rev"><img src="https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?w=100&q=80" alt=""
-              class="yt-rev-img">
+          <div class="yt-rev">
+            <!-- <img src="https://www.youtube.com/embed/N8_4mKkMY5o" alt=""
+              class="yt-rev-img"> -->
             <div>
               <p class="yt-rev-name">મહેન્દ્ર દેસાઈ</p>
               <p class="yt-rev-loc">વડોદરા, ગુજરાત</p>
@@ -2772,50 +2834,6 @@
       </div>
     </div>
     <p class="yt-note">Results may vary — દરેક વ્યક્તિ અલગ હોય છે</p>
-  </section>
-
-  <!-- TEXT REVIEWS -->
-  <section class="review-sec">
-    <div class="review-head"><span class="eyebrow" style="color:var(--gl)">⭐ Customer Reviews</span>
-      <h2 class="sec-title">Real Results, <span class="acc">Real People</span></h2>
-    </div>
-    <div class="review-cards">
-      <div class="rev-card"><img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=200&q=80" alt=""
-          class="rev-avatar">
-        <div>
-          <div class="rev-stars-t">★★★★★</div>
-          <p class="rev-name">રાજેશ પટેલ, સુરત</p>
-          <p class="rev-text">"હવે મારી શૂગર પહેલા કરતા ઘણી stable છે"</p><span class="rev-badge">✅ Verified
-            Purchase</span>
-        </div>
-      </div>
-      <div class="rev-card"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&q=80" alt=""
-          class="rev-avatar">
-        <div>
-          <div class="rev-stars-t">★★★★★</div>
-          <p class="rev-name">સ્મિતા શાહ, અમદાવાદ</p>
-          <p class="rev-text">"energy level સુધરી ગયો છે"</p><span class="rev-badge">✅ Verified Purchase</span>
-        </div>
-      </div>
-      <div class="rev-card"><img src="https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?w=200&q=80" alt=""
-          class="rev-avatar">
-        <div>
-          <div class="rev-stars-t">★★★★☆</div>
-          <p class="rev-name">મહેન્દ્ર દેસાઈ, વડોદરા</p>
-          <p class="rev-text">"દૈનિક જીવન સરળ લાગી રહ્યું છે"</p><span class="rev-badge">✅ Verified Purchase</span>
-        </div>
-      </div>
-      <div class="rev-card"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=200&q=80" alt=""
-          class="rev-avatar">
-        <div>
-          <div class="rev-stars-t">★★★★★</div>
-          <p class="rev-name">ભાવના ગઢવી, રાજકોટ</p>
-          <p class="rev-text">"DiabCare સાથે routine follow કરું છું, ઘણો ફરક જણાય છે"</p><span class="rev-badge">✅
-            Verified Purchase</span>
-        </div>
-      </div>
-    </div>
-    <p class="review-note">Results may vary — દરેક વ્યક્તિ અલગ હોય છે</p>
   </section>
 
   <!-- ORDER FORM -->
@@ -2851,14 +2869,6 @@
         <textarea class="finput" id="faddr" placeholder="ઘર નં, ગ, જિલ્લો, રાજ્ય, Pincode" required></textarea>
       </div>
       <span class="qty-label-t">📦 Quantity પસંદ કરો</span>
-      <div class="qty-row">
-        <button class="qty-btn active" data-q="1" onclick="selQty(this)"><span class="ql">1 Bottle</span><span
-            class="qs">Best Price</span></button>
-        <button class="qty-btn" data-q="2" onclick="selQty(this)"><span class="ql">2 Bottles</span><span
-            class="qs">Extra Saving</span></button>
-        <button class="qty-btn" data-q="3" onclick="selQty(this)"><span class="ql">3 Bottles</span><span class="qs">Max
-            Value</span></button>
-      </div>
       <div class="submit-wrap">
         <button class="order-btn" id="oBtn" onclick="doOrder()">
           <span id="oBtnLbl">🛒 ઓર્ડર કન્ફર્મ કરો</span>
@@ -2872,6 +2882,50 @@
         <div class="trust-tag"><span class="tg">●</span> Free Delivery</div>
       </div>
     </div>
+  </section>
+
+  <!-- TEXT REVIEWS -->
+  <section class="review-sec">
+    <div class="review-head"><span class="eyebrow" style="color:var(--gl)">⭐ Customer Reviews</span>
+      <h2 class="sec-title">Real Results, <span class="acc">Real People</span></h2>
+    </div>
+    <div class="review-cards">
+      <div class="rev-card"><img src="./Image/Client1.png" alt=""
+          class="rev-avatar">
+        <div>
+          <div class="rev-stars-t">★★★★★</div>
+          <p class="rev-name">રાજેશ પટેલ, સુરત</p>
+          <p class="rev-text">"હવે મારી શૂગર પહેલા કરતા ઘણી stable છે"</p><span class="rev-badge">✅ Verified
+            Purchase</span>
+        </div>
+      </div>
+      <div class="rev-card"><img src="./Image/Client2.png" alt=""
+          class="rev-avatar">
+        <div>
+          <div class="rev-stars-t">★★★★★</div>
+          <p class="rev-name">સ્મિતા શાહ, અમદાવાદ</p>
+          <p class="rev-text">"energy level સુધરી ગયો છે"</p><span class="rev-badge">✅ Verified Purchase</span>
+        </div>
+      </div>
+      <div class="rev-card"><img src="./Image/Client3.png" alt=""
+          class="rev-avatar">
+        <div>
+          <div class="rev-stars-t">★★★★☆</div>
+          <p class="rev-name">મહેન્દ્ર દેસાઈ, વડોદરા</p>
+          <p class="rev-text">"દૈનિક જીવન સરળ લાગી રહ્યું છે"</p><span class="rev-badge">✅ Verified Purchase</span>
+        </div>
+      </div>
+      <div class="rev-card"><img src="./Image/Client4.png" alt=""
+          class="rev-avatar">
+        <div>
+          <div class="rev-stars-t">★★★★★</div>
+          <p class="rev-name">ભાવના ગઢવી, રાજકોટ</p>
+          <p class="rev-text">"DiabCare સાથે routine follow કરું છું, ઘણો ફરક જણાય છે"</p><span class="rev-badge">✅
+            Verified Purchase</span>
+        </div>
+      </div>
+    </div>
+    <p class="review-note">Results may vary — દરેક વ્યક્તિ અલગ હોય છે</p>
   </section>
 
   <!-- FAQ -->
@@ -2946,7 +3000,6 @@
       slidesPerView: 'auto',
       spaceBetween: 14,
       loop: true,
-      autoplay: { delay: 4500, disableOnInteraction: false, pauseOnMouseEnter: true },
       speed: 600,
       watchSlidesProgress: true,
       breakpoints: {
@@ -2956,6 +3009,39 @@
       },
       navigation: { nextEl: '#rNext', prevEl: '#rPrev' },
       pagination: { el: '#rPag', clickable: true },
+    });
+
+    // VIDEO — pause all when slide changes
+    function pauseAllReels() {
+      document.querySelectorAll('.reels-swiper .swiper-slide').forEach(s => {
+        const v = s.querySelector('video');
+        if (v) { v.pause(); v.currentTime = 0; }
+        s.classList.remove('is-playing');
+      });
+    }
+
+    rSwiper.on('slideChange', pauseAllReels);
+
+    // When video ends, auto-swipe to next slide
+    document.querySelectorAll('.reels-swiper .swiper-slide video').forEach(v => {
+      v.addEventListener('ended', () => rSwiper.slideNext());
+    });
+
+    // Tap active slide to play / pause (event delegation handles Swiper loop clones)
+    document.querySelector('.reels-swiper').addEventListener('click', e => {
+      const slide = e.target.closest('.reel-slide');
+      if (!slide || !slide.classList.contains('swiper-slide-active')) return;
+      const vid = slide.querySelector('video');
+      if (!vid) return;
+      if (vid.paused) {
+        pauseAllReels();
+        slide.classList.add('is-playing');
+        vid.muted = false;
+        vid.play().catch(() => { vid.muted = true; vid.play().catch(() => {}); });
+      } else {
+        slide.classList.remove('is-playing');
+        vid.pause();
+      }
     });
 
     // FAQ
