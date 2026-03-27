@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You - Herbal Diab Care</title>
+  <style>
+    :root {
+      --green: #1f8f3a;
+      --light-green: #25a245;
+      --bg: #f4faf5;
+      --text: #1d1d1d;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: radial-gradient(circle at 20% 20%, #e7f9ea 0%, var(--bg) 45%, #eef7f0 100%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 560px;
+      background: #fff;
+      border: 1px solid rgba(31, 143, 58, 0.22);
+      border-radius: 20px;
+      padding: clamp(22px, 5vw, 36px);
+      text-align: center;
+      box-shadow: 0 12px 38px rgba(0, 0, 0, 0.1);
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(31, 143, 58, 0.12);
+      color: var(--green);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 1px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+
+    .title {
+      font-size: clamp(28px, 7vw, 40px);
+      color: var(--green);
+      margin-bottom: 12px;
+      font-weight: 800;
+    }
+
+    .hero-img {
+      width: clamp(140px, 40vw, 240px);
+      height: auto;
+      object-fit: contain;
+      margin: 4px auto 14px;
+      display: block;
+    }
+
+    .line {
+      font-size: clamp(15px, 4vw, 19px);
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+
+    .line strong {
+      color: var(--green);
+    }
+
+    .meta {
+      margin-top: 14px;
+      background: #f1f8f2;
+      border: 1px solid rgba(31, 143, 58, 0.2);
+      border-radius: 12px;
+      padding: 12px;
+      font-size: 14px;
+      color: #2f2f2f;
+    }
+
+    .cta {
+      margin-top: 18px;
+      display: inline-block;
+      text-decoration: none;
+      background: var(--light-green);
+      color: #fff;
+      font-weight: 700;
+      padding: 12px 18px;
+      border-radius: 10px;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .cta:hover {
+      background: var(--green);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <div class="badge">Order Confirmed</div>
+    <h1 class="title">Thank You!</h1>
+    <img class="hero-img" src="./Image/Product.avif" alt="Herbal Diab Care Product">
+    <p class="line">Hi <strong id="nameValue">Customer</strong>, your order has been received successfully.</p>
+    <p class="line">Our team will contact you shortly for confirmation.</p>
+    <div class="meta">Selected Course: <strong id="courseValue">1 Month Course</strong></div>
+    <!-- <a class="cta" href="index.html#order">Back To Order Form</a> -->
+  </div>
+
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const name = (params.get('name') || '').trim();
+      const course = (params.get('course') || '').trim();
+      if (name) document.getElementById('nameValue').textContent = name;
+      if (course) document.getElementById('courseValue').textContent = course;
+    })();
+  </script>
+</body>
+
+</html>
