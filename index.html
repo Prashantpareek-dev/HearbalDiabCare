@@ -137,7 +137,7 @@
       position: relative;
       overflow: hidden;
       width: 100%;
-      height: 80vh;
+      height: 100vh;
       display: flex;
       flex-direction: column
     }
@@ -2585,7 +2585,7 @@
     .resp-banner {
       display: block;
       width: 100%;
-      height: 100vh;
+      height: clamp(580px, 70vw, 580px);
       object-fit: cover;
       line-height: 0
     }
@@ -3108,7 +3108,7 @@
         <input class="finput" type="text" id="fcourseCustom" placeholder="Custom course લખો (e.g. 45 days)">
       </div>
       <div class="submit-wrap">
-          <button class="order-btn" id="oBtn" type="button" onclick="doOrder()">
+        <button class="order-btn" id="oBtn" onclick="doOrder()">
           <span id="oBtnLbl">🛒 ઓર્ડર કન્ફર્મ કરો</span>
           <small>Free Delivery + Buy 1 Get 1 સાથે</small>
           <div class="oload" id="oLoad"></div>
@@ -3338,27 +3338,34 @@
       if (last && Date.now() - parseInt(last) < 86400000) {
         alert('તમે આ 24 કલાકમાં ઓર્ડર કરી ચૂક્યા છો.'); return;
       }
-      const nameInput = document.getElementById('nam');
-      const phoneInput = document.getElementById('phonenumber');
-      const addressInput = document.getElementById('address');
-      const n = nameInput.value.trim();
-      const p = phoneInput.value.trim();
-      const a = addressInput.value.trim();
-      if (!n) { nameInput.focus(); alert('કૃપા કરી નામ દાખલ કરો'); return; }
-      if (!/^\d{10}$/.test(p)) { phoneInput.focus(); alert('10 digit ફોન નંબર દાખલ કરો'); return; }
-      if (!a) { addressInput.focus(); alert('કૃપા કરી સરનામું દાખલ કરો'); return; }
+      const n = document.getElementById('fname').value.trim();
+      const p = document.getElementById('fphone').value.trim();
+      const a = document.getElementById('faddr').value.trim();
+      const selectedCourse = document.getElementById('fcourse').value;
+      const customCourse = document.getElementById('fcourseCustom').value.trim();
+      if (!n) { document.getElementById('fname').focus(); alert('કૃપા કરી નામ દાખલ કરો'); return; }
+      if (!p || p.length < 10) { document.getElementById('fphone').focus(); alert('10 digit ફોન નંબર દાખલ કરો'); return; }
+      if (!a) { document.getElementById('faddr').focus(); alert('કૃપા કરી સરનામું દાખલ કરો'); return; }
+      if (!selectedCourse) { alert('કૃપા કરી course પસંદ કરો'); return; }
+      if (selectedCourse === 'Custom' && !customCourse) {
+        document.getElementById('fcourseCustom').focus();
+        alert('કૃપા કરી custom course દાખલ કરો');
+        return;
+      }
       const btn = document.getElementById('oBtn');
       const lbl = document.getElementById('oBtnLbl');
       const bar = document.getElementById('oLoad');
       btn.disabled = true; lbl.textContent = 'Processing...'; bar.classList.add('on');
       setTimeout(() => {
         localStorage.setItem('dc_ord', Date.now().toString());
-        const qs = new URLSearchParams({ name: n, phone: p });
+        const finalCourse = selectedCourse === 'Custom' ? customCourse : selectedCourse;
+        const qs = new URLSearchParams({ name: n, course: finalCourse });
         window.location.href = 'thankyou.html?' + qs.toString();
         btn.disabled = false; lbl.textContent = '🛒 ઓર્ડર કન્ફર્મ કરો'; bar.classList.remove('on');
-        nameInput.value = '';
-        phoneInput.value = '';
-        addressInput.value = '';
+        document.getElementById('fname').value = '';
+        document.getElementById('fphone').value = '';
+        document.getElementById('faddr').value = '';
+        document.getElementById('fcourse').value = '1 Month Course';
         document.getElementById('fcourseCustom').value = '';
         document.getElementById('courseCustomWrap').classList.remove('show');
       }, 2800);
