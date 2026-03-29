@@ -62,7 +62,7 @@
       body {
         padding: 12px
       }
-      
+
     }
 
     /* TICKER */
@@ -137,16 +137,16 @@
       position: relative;
       overflow: hidden;
       width: 100%;
-      height: 100vh;
+      height: 92vh;
       display: flex;
       flex-direction: column
     }
 
-  @media (max-width: 450px) {
-    .hook {
-      height: auto;
+    @media (max-width: 450px) {
+      .hook {
+        height: auto;
+      }
     }
-  }
 
     .hook-noise {
       position: absolute;
@@ -404,7 +404,7 @@
         grid-template-rows: auto 1fr;
         min-height: unset;
         border-bottom: none;
-        border-right: 2px solid rgba(0,0,0,.06);
+        border-right: 2px solid rgba(0, 0, 0, .06);
         direction: ltr !important
       }
 
@@ -640,7 +640,7 @@
         border-bottom: none;
         border-radius: 14px;
         background: var(--gp);
-        box-shadow: 0 2px 16px rgba(0,0,0,.07);
+        box-shadow: 0 2px 16px rgba(0, 0, 0, .07);
         overflow: hidden;
         grid-template-columns: unset
       }
@@ -1426,16 +1426,16 @@
       color: rgba(255, 255, 255, .75)
     }
 
-     @media(min-width:450px) {
-       .offer-row-img {
+    @media(min-width:450px) {
+      .offer-row-img {
         width: 100%;
         height: clamp(20px, 24vw, 180px);
         object-fit: cover
       }
-     }
+    }
 
     @media(min-width:768px) {
-      .offer-sec > div:not(.offer-top):not(.offer-cta) {
+      .offer-sec>div:not(.offer-top):not(.offer-cta) {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 0
@@ -1444,7 +1444,7 @@
       .offer-row {
         grid-template-columns: 1fr;
         border-top: none;
-        border-right: 1px solid rgba(255,255,255,.12);
+        border-right: 1px solid rgba(255, 255, 255, .12);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1669,6 +1669,7 @@
       pointer-events: auto;
       cursor: pointer
     }
+
     .swiper-slide-active.reel-slide.is-playing .reel-play {
       opacity: 0;
       pointer-events: none
@@ -1679,7 +1680,7 @@
       top: 10px;
       right: 10px;
       z-index: 10;
-      background: rgba(0,0,0,.52);
+      background: rgba(0, 0, 0, .52);
       border: none;
       border-radius: 50%;
       width: 36px;
@@ -1702,7 +1703,7 @@
     }
 
     .reel-mute:hover {
-      background: rgba(0,0,0,.78)
+      background: rgba(0, 0, 0, .78)
     }
 
     .reels-nav {
@@ -2595,23 +2596,36 @@
       object-fit: cover;
       line-height: 0
     }
+
     .resp-banner img {
       width: 100%;
       height: 100%;
       display: block
     }
-    .resp-banner .banner-desktop { display: block }
-    .resp-banner .banner-mobile  { display: none  }
+
+    .resp-banner .banner-desktop {
+      display: block
+    }
+
+    .resp-banner .banner-mobile {
+      display: none
+    }
+
     @media (max-width: 767px) {
-      .resp-banner .banner-desktop { display: none  }
-      .resp-banner .banner-mobile  { display: block }
+      .resp-banner .banner-desktop {
+        display: none
+      }
+
+      .resp-banner .banner-mobile {
+        display: block
+      }
     }
   </style>
 </head>
 
 <body>
 
-    <!-- TICKER -->
+  <!-- TICKER -->
   <div class="ticker">
     <div class="ticker-inner"><span>🎁 FREE DELIVERY</span><span>🥗 FREE DIET CHART</span><span>💵 CASH ON
         DELIVERY</span><span>🔥 10% DISCOUNT TODAY</span><span>✅ GMP CERTIFIED</span><span>🌿 AYUSH
@@ -2620,11 +2634,11 @@
   </div>
 
   <!-- HOOK -->
-  <section class="hook">    
-   <div class="resp-banner">
-    <img src="./Image/Hook2.avif" alt="" class="banner-desktop">
-    <img src="./Image/Hook1.avif" alt="" class="banner-mobile">
-   </div>
+  <section class="hook">
+    <div class="resp-banner">
+      <img src="./Image/Hook2.avif" alt="" class="banner-desktop">
+      <img src="./Image/Hook1.avif" alt="" class="banner-mobile">
+    </div>
     <div class="hook-cta-bar">
       <div class="info"><strong>Buy 1 Get 1 + FREE DELIVERY</strong><span>Limited Time Offer</span></div>
       <a href="#order" class="btn-now">ઓર્ડર કરો</a>
@@ -2638,36 +2652,31 @@
       <h2 class="sec-title">આ સમસ્યાઓ <span class="acc" style="color:var(--green)">તમને પણ છે?</span></h2>
     </div>
     <div class="pain-rows-wrap">
-    <div class="pain-row"><img src="./Image/Pain1.avif" alt=""
-        class="pain-img">
-      <div class="pain-text"><span class="pain-icon-lg">📈</span>
-        <p>વારંવાર શૂગર વધી જવી</p><small>Uncontrolled spikes</small>
+      <div class="pain-row"><img src="./Image/Pain1.avif" alt="" class="pain-img">
+        <div class="pain-text"><span class="pain-icon-lg">📈</span>
+          <p>વારંવાર શૂગર વધી જવી</p><small>Uncontrolled spikes</small>
+        </div>
       </div>
-    </div>
-    <div class="pain-row"><img src="./Image/Pain2.avif" alt=""
-        class="pain-img">
-      <div class="pain-text"><span class="pain-icon-lg">💊</span>
-        <p>દવા લીધા પછી પણ સ્ટેબલ ન થવી</p><small>No stability despite meds</small>
+      <div class="pain-row"><img src="./Image/Pain2.avif" alt="" class="pain-img">
+        <div class="pain-text"><span class="pain-icon-lg">💊</span>
+          <p>દવા લીધા પછી પણ સ્ટેબલ ન થવી</p><small>No stability despite meds</small>
+        </div>
       </div>
-    </div>
-    <div class="pain-row"><img src="./Image/Pain3.avif" alt=""
-        class="pain-img">
-      <div class="pain-text"><span class="pain-icon-lg">😔</span>
-        <p>થાક, ચીડિયાપણું અને કમજોરી</p><small>Fatigue & irritability</small>
+      <div class="pain-row"><img src="./Image/Pain3.avif" alt="" class="pain-img">
+        <div class="pain-text"><span class="pain-icon-lg">😔</span>
+          <p>થાક, ચીડિયાપણું અને કમજોરી</p><small>Fatigue & irritability</small>
+        </div>
       </div>
-    </div>
-    <div class="pain-row"><img src="./Image/Pain4.avif" alt=""
-        class="pain-img">
-      <div class="pain-text"><span class="pain-icon-lg">🚫</span>
-        <p>ખાવા-પીવામાં સતત રોકટોક</p><small>Constant restrictions</small>
+      <div class="pain-row"><img src="./Image/Pain4.avif" alt="" class="pain-img">
+        <div class="pain-text"><span class="pain-icon-lg">🚫</span>
+          <p>ખાવા-પીવામાં સતત રોકટોક</p><small>Constant restrictions</small>
+        </div>
       </div>
-    </div>
-    <div class="pain-row"><img src="./Image/Pain5.avif" alt=""
-        class="pain-img">
-      <div class="pain-text"><span class="pain-icon-lg">💔</span>
-        <p>ભવિષ્યમાં Complication નો ડર</p><small>Heart, kidney, eye risk</small>
+      <div class="pain-row"><img src="./Image/Pain5.avif" alt="" class="pain-img">
+        <div class="pain-text"><span class="pain-icon-lg">💔</span>
+          <p>ભવિષ્યમાં Complication નો ડર</p><small>Heart, kidney, eye risk</small>
+        </div>
       </div>
-    </div>
     </div>
     <div class="pain-footer">
       <div class="ico">👉</div>
@@ -2690,7 +2699,8 @@
             <div class="reel-overlay"></div>
             <div class="reel-play">▶</div>
             <button class="reel-mute" title="Toggle Mute">🔊</button>
-            <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@Herbal Diab Care_official</span></div>
+            <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@Herbal Diab
+                Care_official</span></div>
           </div>
           <div class="swiper-slide reel-slide">
             <div class="reel-inner"><video src="./Image/Video2.mp4" playsinline></video></div>
@@ -2725,7 +2735,8 @@
             <div class="reel-overlay"></div>
             <div class="reel-play">▶</div>
             <button class="reel-mute" title="Toggle Mute">🔊</button>
-            <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@Herbal Diab Care_results</span></div>
+            <div class="reel-info"><span class="reel-user"><span class="reel-dot"></span>@Herbal Diab
+                Care_results</span></div>
           </div>
           <div class="swiper-slide reel-slide">
             <div class="reel-inner"><video src="./Image/Vedio7.mp4" playsinline></video></div>
@@ -2754,7 +2765,7 @@
     <div class="intro-product"><img src="./Image/Intro.avif" alt="Herbal Diab Care"></div>
     <p class="intro-desc">આ એક નેચરલ સપોર્ટ ફોર્મ્યુલા છે જે શરીરને અંદરથી balance કરવામાં મદદ કરે છે, જેથી બ્લડ શૂગર
       મેનેજ કરવું સરળ બને.</p>
-  </section> 
+  </section>
 
   <!-- HOW IT WORKS -->
   <section class="hiw-sec">
@@ -2762,29 +2773,25 @@
       <h2 class="sec-title">Herbal Diab Care <span class="acc" style="color:var(--green)">અંદરથી કામ કરે</span></h2>
     </div>
     <div class="hiw-cards">
-      <div class="hiw-card"><img src="./Image/Step4.avif" alt=""
-          class="hiw-card-img">
+      <div class="hiw-card"><img src="./Image/Step4.avif" alt="" class="hiw-card-img">
         <div class="hiw-body"><span class="hiw-num">Step 01</span>
           <h3>Insulin Sensitivity</h3>
           <p>શરીરમાં insulin sensitivity ને સપોર્ટ કરે છે</p>
         </div>
       </div>
-      <div class="hiw-card"><img src="./Image/Step3.avif" alt=""
-          class="hiw-card-img">
+      <div class="hiw-card"><img src="./Image/Step3.avif" alt="" class="hiw-card-img">
         <div class="hiw-body"><span class="hiw-num">Step 02</span>
           <h3>Glucose Regulate</h3>
           <p>Glucose absorption ને regulate કરવામાં મદદ કરે</p>
         </div>
       </div>
-      <div class="hiw-card"><img src="./Image/Step2.avif" alt=""
-          class="hiw-card-img">
+      <div class="hiw-card"><img src="./Image/Step2.avif" alt="" class="hiw-card-img">
         <div class="hiw-body"><span class="hiw-num">Step 03</span>
           <h3>Metabolism સુધારે</h3>
           <p>શરીરનો metabolism સ્વસ્થ બનાવે છે</p>
         </div>
       </div>
-      <div class="hiw-card"><img src="./Image/Step1.avif" alt=""
-          class="hiw-card-img">
+      <div class="hiw-card"><img src="./Image/Step1.avif" alt="" class="hiw-card-img">
         <div class="hiw-body"><span class="hiw-num">Step 04</span>
           <h3>Energy વધારે</h3>
           <p>Energy level વધારવામાં મદદ કરે છે</p>
@@ -2823,7 +2830,7 @@
         <div class="ba-cap">Natural Routine Support</div>
       </div>
     </div>
- 
+
   </section>
 
   <!-- INGREDIENTS -->
@@ -2832,29 +2839,25 @@
       <h2 class="sec-title">100% Natural <span class="acc" style="color:var(--green)">Ayurvedic Herbs</span></h2>
     </div>
     <div class="ing-grid">
-      <div class="ing-card"><img src="./Image/Ind1.avif" alt=""
-          class="ing-img">
+      <div class="ing-card"><img src="./Image/Ind1.avif" alt="" class="ing-img">
         <div class="ing-overlay"></div>
         <div class="ing-info"><span class="ing-name">અશ્વગંધા</span>
           <p class="ing-hint">Stress ઓછો કરી sugar balance support</p>
         </div>
       </div>
-      <div class="ing-card"><img src="./Image/Ind2.avif" alt=""
-          class="ing-img">
+      <div class="ing-card"><img src="./Image/Ind2.avif" alt="" class="ing-img">
         <div class="ing-overlay"></div>
         <div class="ing-info"><span class="ing-name">ત્રિફળા</span>
           <p class="ing-hint">Digestion & metabolism support</p>
         </div>
       </div>
-      <div class="ing-card"><img src="./Image/Ind3.avif" alt=""
-          class="ing-img">
+      <div class="ing-card"><img src="./Image/Ind3.avif" alt="" class="ing-img">
         <div class="ing-overlay"></div>
         <div class="ing-info"><span class="ing-name">ગિલોય</span>
           <p class="ing-hint">Immunity & blood purification</p>
         </div>
       </div>
-      <div class="ing-card"><img src="./Image/Ind4.avif" alt=""
-          class="ing-img">
+      <div class="ing-card"><img src="./Image/Ind4.avif" alt="" class="ing-img">
         <div class="ing-overlay"></div>
         <div class="ing-info"><span class="ing-name">વચા</span>
           <p class="ing-hint">Nervous system & energy support</p>
@@ -2873,8 +2876,7 @@
     <h2 class="sec-title" style="color:#fff">Modern + Ayurveda <span class="acc">Balanced Approach</span></h2>
     <div class="rec-compare">
       <div class="rec-col old">
-        <div class="rec-col-h">❌ સામાન્ય રીત</div><img
-          src="./Image/Before.avif" alt="" class="rec-col-img">
+        <div class="rec-col-h">❌ સામાન્ય રીત</div><img src="./Image/Before.avif" alt="" class="rec-col-img">
         <div class="rec-col-items">
           <div class="rec-item">
             <div class="rdot"></div>માત્ર દવા પર આધાર
@@ -2888,8 +2890,7 @@
         </div>
       </div>
       <div class="rec-col new">
-        <div class="rec-col-h">✅ Herbal Diab Care રીત</div><img
-          src="./Image/After.avif" alt="" class="rec-col-img">
+        <div class="rec-col-h">✅ Herbal Diab Care રીત</div><img src="./Image/After.avif" alt="" class="rec-col-img">
         <div class="rec-col-items">
           <div class="rec-item">
             <div class="rdot"></div>Holistic approach
@@ -2931,22 +2932,19 @@
       <h2 class="sec-title">કેવી રીતે <span class="acc" style="color:var(--green)">ઉપયોગ કરવો?</span></h2>
     </div>
     <div class="use-steps">
-      <div class="use-step"><img src="./Image/How3.avif" alt=""
-          class="use-step-img">
+      <div class="use-step"><img src="./Image/How3.avif" alt="" class="use-step-img">
         <div class="use-body"><span class="use-num">Step 01</span>
           <h3>1–2 વખત લો</h3>
           <p>દિવસમાં 1–2 વખત (doctor/advice મુજબ)</p>
         </div>
       </div>
-      <div class="use-step"><img src="./Image/How2.avif" alt=""
-          class="use-step-img">
+      <div class="use-step"><img src="./Image/How2.avif" alt="" class="use-step-img">
         <div class="use-body"><span class="use-num">Step 02</span>
           <h3>ભોજન પછી</h3>
           <p>ભોજન પછી લેવુ વધુ સારું</p>
         </div>
       </div>
-      <div class="use-step"><img src="./Image/How1.avif" alt=""
-          class="use-step-img">
+      <div class="use-step"><img src="./Image/How1.avif" alt="" class="use-step-img">
         <div class="use-body"><span class="use-num">Step 03</span>
           <h3>નિયમિત ઉપયોગ</h3>
           <p>નિયમિત ઉપયોગથી સારું પરિણામ</p>
@@ -2960,26 +2958,22 @@
     <span class="eyebrow" style="color:var(--gl)">✅ Certified</span>
     <h2 class="sec-title" style="color:#fff">Quality & <span class="acc">Safety Assured</span></h2>
     <div class="cert-grid">
-      <div class="cert-card"><img src="./Image/Trust1.avif" alt=""
-          class="cert-img">
+      <div class="cert-card"><img src="./Image/Trust1.avif" alt="" class="cert-img">
         <div class="cert-info"><span class="cert-name">GMP Certified</span>
           <p class="cert-desc">Good Manufacturing Practice</p>
         </div>
       </div>
-      <div class="cert-card"><img src="./Image/Trust2.avif" alt=""
-          class="cert-img">
+      <div class="cert-card"><img src="./Image/Trust2.avif" alt="" class="cert-img">
         <div class="cert-info"><span class="cert-name">ISO Certified</span>
           <p class="cert-desc">International Quality Standard</p>
         </div>
       </div>
-      <div class="cert-card"><img src="./Image/Trust3.avif" alt=""
-          class="cert-img">
+      <div class="cert-card"><img src="./Image/Trust3.avif" alt="" class="cert-img">
         <div class="cert-info"><span class="cert-name">AYUSH Approved</span>
           <p class="cert-desc">Ministry of AYUSH</p>
         </div>
       </div>
-      <div class="cert-card"><img src="./Image/Trust4.avif" alt=""
-          class="cert-img">
+      <div class="cert-card"><img src="./Image/Trust4.avif" alt="" class="cert-img">
         <div class="cert-info"><span class="cert-name">FSSAI Registered</span>
           <p class="cert-desc">Food Safety Standards</p>
         </div>
@@ -2995,16 +2989,13 @@
       <p class="offer-sub">Special discount + Free gifts સાથે</p>
     </div>
     <div>
-      <div class="offer-row"><img src="./Image/offer1.avif" alt=""
-          class="offer-row-img">
+      <div class="offer-row"><img src="./Image/offer1.avif" alt="" class="offer-row-img">
         <div class="offer-row-text"><strong>🚚 FREE Delivery</strong><span>ઘરે ઘરે ફ્રી ડિલિવરી</span></div>
       </div>
-      <div class="offer-row"><img src="./Image/offer2.avif" alt=""
-          class="offer-row-img">
+      <div class="offer-row"><img src="./Image/offer2.avif" alt="" class="offer-row-img">
         <div class="offer-row-text"><strong>🥗 FREE Diet Chart</strong><span>Expert-designed diet plan</span></div>
       </div>
-      <div class="offer-row"><img src="./Image/offer3.avif" alt=""
-          class="offer-row-img">
+      <div class="offer-row"><img src="./Image/offer3.avif" alt="" class="offer-row-img">
         <div class="offer-row-text"><strong>🏷️ Buy 1 Get 1</strong><span>Today only – Limited stock</span></div>
       </div>
     </div>
@@ -3018,7 +3009,8 @@
     <h2 class="sec-title">Customer Video <span class="acc" style="color:var(--green)">Reviews</span></h2>
     <div class="yt-cards">
       <div class="yt-card">
-        <div class="yt-embed"><iframe src="https://www.youtube.com/embed/FHkk6A3NlCU" allowfullscreen loading="lazy"></iframe></div>
+        <div class="yt-embed"><iframe src="https://www.youtube.com/embed/FHkk6A3NlCU" allowfullscreen
+            loading="lazy"></iframe></div>
         <div class="yt-card-body">
           <div class="yt-rev">
             <!-- <img src="https://www.youtube.com/embed/0EsBTsrSNsY" alt=""
@@ -3034,8 +3026,8 @@
         </div>
       </div>
       <div class="yt-card">
-        <div class="yt-embed"><iframe src="https://www.youtube.com/embed/0EsBTsrSNsY"
-            allowfullscreen loading="lazy"></iframe></div>
+        <div class="yt-embed"><iframe src="https://www.youtube.com/embed/0EsBTsrSNsY" allowfullscreen
+            loading="lazy"></iframe></div>
         <div class="yt-card-body">
           <div class="yt-rev">
             <!-- <img src="https://www.youtube.com/embed/FHkk6A3NlCU" alt=""
@@ -3051,8 +3043,8 @@
         </div>
       </div>
       <div class="yt-card">
-        <div class="yt-embed"><iframe src="https://www.youtube.com/embed/N8_4mKkMY5o"
-            allowfullscreen loading="lazy"></iframe></div>
+        <div class="yt-embed"><iframe src="https://www.youtube.com/embed/N8_4mKkMY5o" allowfullscreen
+            loading="lazy"></iframe></div>
         <div class="yt-card-body">
           <div class="yt-rev">
             <!-- <img src="https://www.youtube.com/embed/N8_4mKkMY5o" alt=""
@@ -3087,39 +3079,40 @@
       <p>આ offer <strong id="timerDisplay">23:59:59</strong> માં સમાપ્ત — <strong>હવે ઓર્ડર કરો!</strong></p>
     </div>
     <div class="order-card">
-      <form action="https://ayurvedickranti.in/crm-1/perfex_crm/forms/wtl/c0f94c1bfc79d4c01ebaca2be8dda496 " enctype="multipart/form-data"
-                        target="hidden_iframe" method="post"  accept-charset="utf-8">
-      <div class="fgroup">
-         <!-- Hidden CRM Fields -->
-                        <input type="hidden" name="csrf_token_name" value="c0f94c1bfc79d4c01ebaca2be8dda496">
-                        <input type="hidden" name="key" value="c0f94c1bfc79d4c01ebaca2be8dda496">
-        <label class="flabel">👤 નામ</label>
-        
-        <input class="finput" type="text" id="nam" placeholder="તમારું પૂરું નામ" required>
-      </div>
-      <div class="fgroup">
-        <label class="flabel">📱 ફોન નંબર</label>
-        
-        <input class="finput" type="tel" id="phonenumber" placeholder="10 digit mobile number" maxlength="10"
-          pattern="[0-9]{10}" required>
-      </div>
-      <div class="fgroup">
-        <label class="flabel">🏠 સરનામું</label>
-        
-        <textarea class="finput" id="address" name="address" placeholder="ઘર નં, ગ, જિલ્લો, રાજ્ય, Pincode" required></textarea>
-      </div>
-       <!-- Hidden iframe for CRM form submission -->
-                    <iframe name="hidden_iframe" style="display:none;"></iframe>
-      <div class="course-custom-wrap" id="courseCustomWrap">
-        <input class="finput" type="text" id="fcourseCustom" placeholder="Custom course લખો (e.g. 45 days)">
-      </div>
-      <div class="submit-wrap">
-        <button class="order-btn" id="oBtn" type="button" onclick="doOrder()">
-          <span id="oBtnLbl">🛒 ઓર્ડર કન્ફર્મ કરો</span>
-          <small>Free Delivery + Buy 1 Get 1 સાથે</small>
-          <div class="oload" id="oLoad"></div>
-        </button>
-      </div>
+      <form action="https://ayurvedickranti.in/crm-1/perfex_crm/forms/wtl/c0f94c1bfc79d4c01ebaca2be8dda496 "
+        enctype="multipart/form-data" target="hidden_iframe" method="post" accept-charset="utf-8">
+        <div class="fgroup">
+          <!-- Hidden CRM Fields -->
+          <input type="hidden" name="csrf_token_name" value="c0f94c1bfc79d4c01ebaca2be8dda496">
+          <input type="hidden" name="key" value="c0f94c1bfc79d4c01ebaca2be8dda496">
+          <label class="flabel">👤 નામ</label>
+
+          <input class="finput" type="text" id="nam" placeholder="તમારું પૂરું નામ" required>
+        </div>
+        <div class="fgroup">
+          <label class="flabel">📱 ફોન નંબર</label>
+
+          <input class="finput" type="tel" id="phonenumber" placeholder="10 digit mobile number" maxlength="10"
+            pattern="[0-9]{10}" required>
+        </div>
+        <div class="fgroup">
+          <label class="flabel">🏠 સરનામું</label>
+
+          <textarea class="finput" id="address" name="address" placeholder="ઘર નં, ગ, જિલ્લો, રાજ્ય, Pincode"
+            required></textarea>
+        </div>
+        <!-- Hidden iframe for CRM form submission -->
+        <iframe name="hidden_iframe" style="display:none;"></iframe>
+        <div class="course-custom-wrap" id="courseCustomWrap">
+          <input class="finput" type="text" id="fcourseCustom" placeholder="Custom course લખો (e.g. 45 days)">
+        </div>
+        <div class="submit-wrap">
+          <button class="order-btn" id="oBtn" type="button" onclick="doOrder()">
+            <span id="oBtnLbl">🛒 ઓર્ડર કન્ફર્મ કરો</span>
+            <small>Free Delivery + Buy 1 Get 1 સાથે</small>
+            <div class="oload" id="oLoad"></div>
+          </button>
+        </div>
       </form>
       <div class="trust-row">
         <div class="trust-tag"><span class="tg">●</span> 100% Secure</div>
@@ -3135,8 +3128,7 @@
       <h2 class="sec-title">Real Results, <span class="acc">Real People</span></h2>
     </div>
     <div class="review-cards">
-      <div class="rev-card"><img src="./Image/Client1.avif" alt=""
-          class="rev-avatar">
+      <div class="rev-card"><img src="./Image/Client1.avif" alt="" class="rev-avatar">
         <div>
           <div class="rev-stars-t">★★★★★</div>
           <p class="rev-name">રાજેશ પટેલ, સુરત</p>
@@ -3144,28 +3136,26 @@
             Purchase</span>
         </div>
       </div>
-      <div class="rev-card"><img src="./Image/Client2.avif" alt=""
-          class="rev-avatar">
+      <div class="rev-card"><img src="./Image/Client2.avif" alt="" class="rev-avatar">
         <div>
           <div class="rev-stars-t">★★★★★</div>
           <p class="rev-name">સ્મિતા શાહ, અમદાવાદ</p>
           <p class="rev-text">"energy level સુધરી ગયો છે"</p><span class="rev-badge">✅ Verified Purchase</span>
         </div>
       </div>
-      <div class="rev-card"><img src="./Image/Client3.avif" alt=""
-          class="rev-avatar">
+      <div class="rev-card"><img src="./Image/Client3.avif" alt="" class="rev-avatar">
         <div>
           <div class="rev-stars-t">★★★★☆</div>
           <p class="rev-name">મહેન્દ્ર દેસાઈ, વડોદરા</p>
           <p class="rev-text">"દૈનિક જીવન સરળ લાગી રહ્યું છે"</p><span class="rev-badge">✅ Verified Purchase</span>
         </div>
       </div>
-      <div class="rev-card"><img src="./Image/Client4.avif" alt=""
-          class="rev-avatar">
+      <div class="rev-card"><img src="./Image/Client4.avif" alt="" class="rev-avatar">
         <div>
           <div class="rev-stars-t">★★★★★</div>
           <p class="rev-name">ભાવના ગઢવી, રાજકોટ</p>
-          <p class="rev-text">"Herbal Diab Care સાથે routine follow કરું છું, ઘણો ફરક જણાય છે"</p><span class="rev-badge">✅
+          <p class="rev-text">"Herbal Diab Care સાથે routine follow કરું છું, ઘણો ફરક જણાય છે"</p><span
+            class="rev-badge">✅
             Verified Purchase</span>
         </div>
       </div>
@@ -3222,7 +3212,8 @@
 
   <!-- STICKY BAR -->
   <div class="sticky-bar">
-    <div class="sticky-info"><strong>Herbal Diab Care – Limited Stock!</strong><span>Free Delivery + Buy 1 Get 1 Today</span></div>
+    <div class="sticky-info"><strong>Herbal Diab Care – Limited Stock!</strong><span>Free Delivery + Buy 1 Get 1
+        Today</span></div>
     <a href="#order" class="sticky-btn">Order Now</a>
   </div>
 
@@ -3244,9 +3235,8 @@
     const rSwiper = new Swiper('.reels-swiper', {
       centeredSlides: true,
       slidesPerView: 'auto',
-      loopedSlides: 3,
       spaceBetween: 14,
-      loop: reelSlides.length > 7,
+      loop: true,
       speed: 600,
       watchSlidesProgress: true,
       breakpoints: {
@@ -3284,8 +3274,8 @@
       vid.muted = false;
       vid.play().catch(() => {
         vid.muted = true;
-        vid.play().catch(() => {});
-      }).finally ? vid.play().catch(() => {}).then ? null : null : null;
+        vid.play().catch(() => { });
+      });
       updateMuteBtn(activeSlide);
     }
 
@@ -3293,9 +3283,13 @@
     rSwiper.on('init', () => setTimeout(playActiveReel, 300));
 
     // When video ends, auto-swipe to next slide
-    document.querySelectorAll('.reels-swiper .swiper-slide video').forEach(v => {
-      v.addEventListener('ended', () => rSwiper.slideNext());
-    });
+    // Use capture phase so cloned loop-slides are also handled
+    document.querySelector('.reels-swiper').addEventListener('ended', (e) => {
+      const slide = e.target.closest('.swiper-slide');
+      if (slide && slide.classList.contains('swiper-slide-active')) {
+        rSwiper.slideNext();
+      }
+    }, true);
 
     // Mute button click
     document.querySelector('.reels-swiper').addEventListener('click', e => {
@@ -3318,7 +3312,7 @@
         pauseAllReels();
         slide.classList.add('is-playing');
         vid.muted = false;
-        vid.play().catch(() => { vid.muted = true; vid.play().catch(() => {}); });
+        vid.play().catch(() => { vid.muted = true; vid.play().catch(() => { }); });
         updateMuteBtn(slide);
       } else {
         vid.pause();
